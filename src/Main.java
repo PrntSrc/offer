@@ -1,3 +1,4 @@
+import zbook.LinkedListUtils;
 import zeetcode.LongestPalindromicSubstring;
 
 import java.util.concurrent.CountDownLatch;
@@ -22,8 +23,9 @@ public class Main {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        LongestPalindromicSubstring lps = new LongestPalindromicSubstring();
-        String s = "civilwartestingwhetherthatnaptionoranynartionsoconceivedandsodedicatedcanlongendureWeareqmetonagreatbattlefiemldoftzhatwarWehavecometodedicpateaportionofthatfieldasafinalrestingplaceforthosewhoheregavetheirlivesthatthatnationmightliveItisaltogetherfangandproperthatweshoulddothisButinalargersensewecannotdedicatewecannotconsecratewecannothallowthisgroundThebravelmenlivinganddeadwhostruggledherehaveconsecrateditfaraboveourpoorponwertoaddordetractTgheworldadswfilllittlenotlenorlongrememberwhatwesayherebutitcanneverforgetwhattheydidhereItisforusthelivingrathertobededicatedheretotheulnfinishedworkwhichtheywhofoughtherehavethusfarsonoblyadvancedItisratherforustobeherededicatedtothegreattdafskremainingbeforeusthatfromthesehonoreddeadwetakeincreaseddevotiontothatcauseforwhichtheygavethelastpfullmeasureofdevotionthatweherehighlyresolvethatthesedeadshallnothavediedinvainthatthisnationunsderGodshallhaveanewbirthoffreedomandthatgovernmentofthepeoplebythepeopleforthepeopleshallnotperishfromtheearth";
-        System.out.println(lps.longestPalindrome(s));
+        LinkedListUtils llu = new LinkedListUtils();
+        for (int i = 1; i < 5; i++)
+            llu.add(i);
+        llu.printReverse();
     }
 }
