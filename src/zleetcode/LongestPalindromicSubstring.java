@@ -1,4 +1,4 @@
-package zeetcode;
+package zleetcode;
 
 /**
  * leetcode 5 medium

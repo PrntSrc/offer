@@ -9,7 +9,7 @@ import java.util.Scanner;
  */
 public class ColoredBricks {
 
-    public static int getWayValue(String s) {
+    public static int getColorWayNum(String s) {
         int[] bricks = new int[26];
         int count = 0;
         for (int i = 0; i < s.length(); i++)
@@ -24,6 +24,6 @@ public class ColoredBricks {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String s = sc.nextLine();
-        System.out.println(getWayValue(s));
+        System.out.println(getColorWayNum(s));
     }
 }
