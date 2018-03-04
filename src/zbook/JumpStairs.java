@@ -7,10 +7,10 @@ package zbook;
  */
 public class JumpStairs {
 
-    public static int countJumpMethods(int n) {
-        if (n <= 2) return n;
+    public static int countJumpMethods(int stairNum) {
+        if (stairNum <= 2) return stairNum;
         int pre = 1, cur = 2, temp;
-        while (n-- > 2) {
+        while (stairNum-- > 2) {
             temp = cur;
             cur += pre;
             pre = temp;

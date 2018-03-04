@@ -25,7 +25,7 @@ public class Fibonacci {
     }
 
     public static void main(String[] args) {
-        System.out.println(fibonacci(5));
+        System.out.println(fibonacci(11));
         System.out.println(fibonacciR(5));
     }
 }
