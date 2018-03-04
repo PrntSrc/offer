@@ -13,7 +13,7 @@ public class OperateSequence {
         int[] b = new int[n];
         if (n % 2 == 0) {
             for (int i = 0; i < n; i++) {
-                b[n / 2 - i - 1] = nums[ ];
+//                b[n / 2 - i - 1] = nums[ ];
             }
         }
 
