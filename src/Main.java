@@ -1,8 +1,13 @@
-import zleetcode.LongestPalindromicSubstring;
-
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+import java.util.Stack;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  * @author Yue
@@ -11,7 +16,7 @@ import java.util.concurrent.Executors;
 public class Main {
 
     private static CountDownLatch latch = new CountDownLatch(1);
-    private static ExecutorService executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors() * 2);
+//    private static ExecutorService executorService = new ThreadPoolExecutor();//Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors() * 2);
 
     private static void fun() {
         int i = 0;
@@ -22,7 +27,6 @@ public class Main {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        String s = "We are happy";
-        System.out.println(s.replace(" ", "%20"));
+
     }
 }
