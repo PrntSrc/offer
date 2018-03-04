@@ -9,6 +9,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
 
+
 /**
  * @author Yue
  * @since 2018/1/20
@@ -26,7 +27,18 @@ public class Main {
         latch.countDown();
     }
 
-    public static void main(String[] args) throws InterruptedException {
+    public static int uniquePaths(int m, int n) {
+        return countPaths(m, n, 0);
+    }
 
+    private static int countPaths(int m, int n, int count) {
+        if (m == 1 && n == 1) return count + 1;
+        else if (m < 1 || n < 1) return count;
+        count = countPaths(m - 1, n, count);
+        count = countPaths(m, n - 1, count);
+        return count;
+    }
+
+    public static void main(String[] args) throws InterruptedException {
     }
 }
