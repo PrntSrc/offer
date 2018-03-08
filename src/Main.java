@@ -1,5 +1,8 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.Stack;
@@ -40,5 +43,8 @@ public class Main {
     }
 
     public static void main(String[] args) throws InterruptedException {
+        Thread.interrupted();
+        Map<String, String> map = new HashMap<>();
+        List<String> list = new LinkedList<>();
     }
 }
