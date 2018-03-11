@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Hashtable;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -46,5 +47,8 @@ public class Main {
         Thread.interrupted();
         Map<String, String> map = new HashMap<>();
         List<String> list = new LinkedList<>();
+
+        Hashtable<String, String> hashtable = new Hashtable<>();
+//        hashtable.contains()
     }
 }
