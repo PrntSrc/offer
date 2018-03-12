@@ -21,8 +21,8 @@ public class MirrorOfBinaryTree {
         TreeNode node = root.left;
         root.left = root.right;
         root.right = node;
-        Mirror(root.left);
-        Mirror(root.right);
+        if (root.left != null) Mirror(root.left);
+        if (root.right != null) Mirror(root.right);
         return root;
     }
 
