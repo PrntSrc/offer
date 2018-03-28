@@ -1,3 +1,5 @@
+import sun.nio.ch.ThreadPool;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -11,7 +13,9 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.atomic.AtomicInteger;
 
 
 /**
@@ -44,11 +48,10 @@ public class Main {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        Thread.interrupted();
-        Map<String, String> map = new HashMap<>();
-        List<String> list = new LinkedList<>();
-
-        Hashtable<String, String> hashtable = new Hashtable<>();
+        ExecutorService es = Executors.newCachedThreadPool();
+        System.out.println((char)('a' - 32));
+        System.out.println((1 << 1) + 1);
+//        SynchronousQueue
 //        hashtable.contains()
     }
 }
