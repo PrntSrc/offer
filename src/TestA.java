@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * @author Yue Lin
  * @since 2018-03-30
@@ -16,6 +18,7 @@ public class TestA {
         String s = "a";
         change(s);
         System.out.println(s);
+//        ArrayList
         StringBuilder sb = new StringBuilder("a");
         change(sb);
         System.out.println(sb.toString());

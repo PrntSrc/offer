@@ -23,6 +23,17 @@ public class Main {
         return ans;
     }
 
+//    public static int findPairs(int[] nums, int k) {
+//        int res = 0;
+//        Arrays.sort(nums);
+//        for (int i = 0, j = 0; i < nums.length; i++) {
+//            for (j = Math.max(j, i + 1); j < nums.length && nums[j] - nums[i] < k; j++);
+//            if (j < nums.length && nums[j] - nums[i] == k) res++;
+//            while (i + 1 < nums.length && nums[i] == nums[i + 1]) i++;
+//        }
+//        return res;
+//    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
