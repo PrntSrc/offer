@@ -15,12 +15,15 @@ public class TestA {
     }
 
     public static void main(String[] args) {
-        String s = "a";
-        change(s);
-        System.out.println(s);
-//        ArrayList
-        StringBuilder sb = new StringBuilder("a");
-        change(sb);
-        System.out.println(sb.toString());
+//        String s = "a";
+//        change(s);
+//        System.out.println(s);
+////        ArrayList
+//        StringBuilder sb = new StringBuilder("a");
+//        change(sb);
+//        System.out.println(sb.toString());
+        int a = 10;
+        int b = 3;
+        System.out.println(Math.floorDiv(10, 3));
     }
 }
