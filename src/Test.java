@@ -1,11 +1,26 @@
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.concurrent.ArrayBlockingQueue;
 
 /**
  * @author Yue
  * @since 2018/3/26
  */
+
+class Base {
+    public Base() {func();}
+    public void func() {
+        System.out.println("Base.Func");
+    }
+}
+
+class Sub extends Base {
+    public Sub() {func();}
+    public void func() {
+        System.out.println("Sub.Func");
+    }
+}
 public class Test {
 
 //    int count;
@@ -27,8 +42,10 @@ public class Test {
         }
     }
     public static void main(String[] args) {
-        Map<> map = new HashMap()
+
+//        Map<> map = new HashMap()
         System.out.println(foo());
+
 //        System.out.println(new Test().count);
 //        new Test().count;
     }
