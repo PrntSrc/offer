@@ -90,7 +90,7 @@ public class Backpack {
         int[] weights = new int[] {12, 13, 23, 36};
         int[] values = new int[] {12, 11, 20, 30};
         int capacity = 40;
-//        System.out.println(zeroOneBackpack(n, weights, values, capacity));
+        System.out.println(zeroOneBackpack(n, weights, values, capacity));
         printZeroOneBackpackPath(n, weights, values, capacity);
     }
 }
