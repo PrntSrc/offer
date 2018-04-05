@@ -1,5 +1,8 @@
 package aoffer;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * 约瑟夫环
  * @author Yue Lin
