@@ -7,7 +7,13 @@ package zutil;
 public class Search {
 
     // 二分搜索 排序数组查找第一个K值下标，不存在返回-1
-    private static int getFirstK(int[] sortedArray, int k) {
+    /**
+     * search the first k in a sorted array by using binary search
+     * @param sortedArray the sorted array for searching
+     * @param k the search target
+     * @return the index of first k, return -1 if k dose not exist
+     */
+    public static int getFirstK(int[] sortedArray, int k) {
         int l = 0, h = sortedArray.length - 1, m;
         while (l <= h) {
             m = l + (h - l) / 2;
@@ -21,7 +27,13 @@ public class Search {
     }
 
     // 二分搜索 排序数组查找最后一个K值下标，不存在返回-1
-    private static int getLastK(int[] sortedArray, int k) {
+    /**
+     * search the last k in a sorted array by using binary search
+     * @param sortedArray the sorted array for searching
+     * @param k the search target
+     * @return the index of last k, return -1 if k dose not exist
+     */
+    public static int getLastK(int[] sortedArray, int k) {
         int l = 0, h = sortedArray.length - 1, m;
         while (l <= h) {
             m = l + (h - l) / 2;

@@ -9,11 +9,20 @@ import java.util.Scanner;
  */
 public class SodaBottle {
 
+//    private static int drinkNum(int num) {
+//        int sum = 0;
+//        while (num > 2) {
+//             sum += num / 3;
+//             num = num / 3 + num % 3;
+//        }
+//        return num == 2 ? sum + 1 : sum;
+//    }
+
     private static int drinkNum(int num) {
         int sum = 0;
         while (num > 2) {
-             sum += num / 3;
-             num = num / 3 + num % 3;
+            sum += num / 3;
+            num = num % 3 + num / 3;
         }
         return num == 2 ? sum + 1 : sum;
     }

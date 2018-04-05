@@ -1,8 +1,10 @@
 package huawei.developer;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
+import java.util.TreeMap;
 
 /**
  * 明明的随机数 建个1001长度的数组 试试treeSet
@@ -11,25 +13,34 @@ import java.util.Set;
  */
 public class MingsRandomNum {
 
-    private static void removeDuplicateAndSort(int[] nums) {
-        int k = nums.length;
-        Set<Integer> set = new HashSet<>();
-        // TODO 判断 nums.length > 0 ?
-        set.add(nums[0]);
-        for (int i = 0; i < k - 1; i++) {
-            int j = i + 1;
-            if (!set.contains(nums[j])) {
-                set.add(nums[j]);
-                for (; j > 0 && nums[j] < nums[j - 1]; j--)
-                    exchange(nums, j - 1, j);
-            } else {
-                exchange(nums, j, --k);
-                i--;
-            }
-        }
-        for (int i = 0; i < k; i++)
-            System.out.println(nums[i]);
+//    private static void removeDuplicateAndSort(int[] nums) {
+//        int k = nums.length;
+//        Set<Integer> set = new HashSet<>();
+//        // TODO 判断 nums.length > 0 ?
+//        set.add(nums[0]);
+//        for (int i = 0; i < k - 1; i++) {
+//            int j = i + 1;
+//            if (!set.contains(nums[j])) {
+//                set.add(nums[j]);
+//                for (; j > 0 && nums[j] < nums[j - 1]; j--)
+//                    exchange(nums, j - 1, j);
+//            } else {
+//                exchange(nums, j, --k);
+//                i--;
+//            }
+//        }
+//        for (int i = 0; i < k; i++)
+//            System.out.println(nums[i]);
+//
+//    }
 
+    private static void removeDuplicateAndSort(int[] nums) {
+        Set<Integer> set = new HashSet<>();
+        for (int i : nums) set.add(i);
+        Integer[] res = set.toArray(new Integer[]{});
+        Arrays.sort(res);
+        for (int i : res)
+            System.out.println(i);
     }
 
     private static void exchange(int[] nums, int x, int y) {
