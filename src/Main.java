@@ -13,9 +13,11 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Semaphore;
 import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.logging.SimpleFormatter;
 
 
 /**
@@ -52,6 +54,11 @@ public class Main {
         System.out.println((char)('a' - 32));
         System.out.println((1 << 1) + 1);
 
+//        ArrayList
+//        Semaphore
+//        ExecutorService es = Executors.newCachedThreadPool()
+//        HashMap = ;
+//                String
 //        SynchronousQueue
 //        hashtable.contains()
     }
