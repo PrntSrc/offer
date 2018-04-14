@@ -53,13 +53,6 @@ public class Main {
         ExecutorService es = Executors.newCachedThreadPool();
         System.out.println((char)('a' - 32));
         System.out.println((1 << 1) + 1);
-
         System.out.println();
-//        ArrayList
-//        Semaphore
-//        ExecutorService es = Executors.newCachedThreadPool()
-//                String
-//        SynchronousQueue
-//        hashtable.contains()
     }
 }

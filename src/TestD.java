@@ -1,42 +1,37 @@
-package sort;
-
 import java.util.Arrays;
 
 /**
- * @author Yue
- * @since 2018/3/15
+ * @author Yue Lin
+ * @since 2018-04-09
  */
-public class Sort {
+public class TestD {
 
-    private static int[] temp;
-
-    public static void bubbleSort(int[] nums) {
+    public static void insertSort(int[] nums) {
         for (int i = 0; i < nums.length - 1; i++) {
-            for (int j = 0; j < nums.length - i - 1; j++) {
-                if (nums[j] > nums[j + 1])
-                    exchange(nums, j, j + 1);
+            int j = i + 1;
+            while (j > 0 && nums[j] < nums[j - 1]) {
+                exchange(nums, j - 1, j);
+                j--;
             }
         }
     }
 
     public static void selectSort(int[] nums) {
-        for (int i = 0, j; i < nums.length - 1; i++) {
-            int k = i;
-            for (j = i + 1; j < nums.length; j++) {
-                if (nums[j] < nums[k]) k = j;
+        for (int i = 0; i < nums.length - 1; i++) {
+            int min = i;
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[j] < nums[min]) min = j;
             }
-            exchange(nums, k, i);
+            exchange(nums, i, min);
         }
     }
 
-
-//todo 错误
-//    public static void insertSort(int[] nums) {
-//        for (int i = 0; i < nums.length - 1; i++) {
-//            int j = i + 1;
-//            while (j > 0 && nums[j] < nums[j - 1]) exchange(nums, j, j -1);
+//    public static void bubbleSort(int[] nums) {
+//        for (int i = 0; i < nums.length; i++) {
+//            for (int )
 //        }
 //    }
+    private static int[] temp;
 
     public static void mergeSort(int[] nums) {
         temp = new int[nums.length];
@@ -58,8 +53,8 @@ public class Sort {
         for (int k = l; k <= h; k++) {
             if (i > m) nums[k] = temp[j++];
             else if (j > h) nums[k] = temp[i++];
-            else if (temp[i] > temp[j]) nums[k] = temp[j++];
-            else nums[k] = temp[i++];
+            else if (temp[i] <= temp[j]) nums[k] = temp[i++];
+            else nums[k] = temp[j++];
         }
     }
 
@@ -69,18 +64,19 @@ public class Sort {
 
     private static void quickSort(int[] nums, int l, int h) {
         if (l >= h) return;
-        int j = partition(nums, l, h);
-        quickSort(nums, l, j - 1);
-        quickSort(nums, j + 1, h);
+        int k = partition(nums, l, h);
+        quickSort(nums, l, k - 1);
+        quickSort(nums, k + 1, h);
     }
 
     private static int partition(int[] nums, int l, int h) {
-        int v = nums[l], i = l, j = h + 1;
+        int m = nums[l];
+        int i = l, j = h + 1;
         while (true) {
-            while (nums[++i] < v) if (i == h) break;
-            while (nums[--j] > v) if (j == l) break;
+            while (nums[++i] <= m) if (i == h) break;
+            while (nums[--j] >= m) if (j == l) break;
             if (i >= j) break;
-            exchange(nums, i, j);
+            else exchange(nums, i, j);
         }
         exchange(nums, l, j);
         return j;
@@ -93,8 +89,11 @@ public class Sort {
     }
 
     public static void main(String[] args) {
-        int[] nums = new int[] {3, 2, 4, 8, 10, 2, 0};
-        mergeSort(nums);
-        System.out.println(Arrays.toString(nums));
+//        int[] nums = new int[] {5, 4, 3, 9, 6, 1, 0, 8};
+//        quickSort(nums);
+//        System.out.println(Arrays.toString(nums));
+        boolean b1 = true;
+        boolean b2 = true;
+        System.out.println(b1 && b2);
     }
 }
