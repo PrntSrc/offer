@@ -58,9 +58,24 @@ public class Num39_MoreThanHalfNum {
         nums[y] = temp;
     }
 
+    private static int review(int[] nums) {
+        if (nums == null || nums.length == 0) return Integer.MIN_VALUE;
+        int cur = nums[0], count = 1;
+        for (int i = 1; i < nums.length; i++) {
+            if (count == 0) {
+                cur = nums[i];
+                count = 1;
+            }
+            if (nums[i] != cur)
+                count--;
+            else count++;
+
+        }
+        return cur;
+    }
 
     public static void main(String[] args) throws Exception {
         int[] nums = new int[] {1, 2, 3, 2, 2, 2, 5, 4, 2};
-        System.out.println(getMoreThanHalfNum2(nums));
+        System.out.println(review(nums));
     }
 }

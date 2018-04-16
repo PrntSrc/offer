@@ -33,4 +33,28 @@ public class SequenceTraversal {
         }
     }
 
+    public static void sequenceTraversalWithLayer(TreeNode root) {
+        if (root == null) return;
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            int temp = 1;
+            int len = temp;
+            temp = 0;
+            while (len-- > 0) {
+                TreeNode node = queue.poll();
+                System.out.println(node.val);
+
+                if (node.left != null) {
+                    queue.offer(node.left);
+                    temp++;
+                }
+                if (node.right != null) {
+                    queue.offer(node.right);
+                    temp++;
+                }
+            }
+        }
+    }
+
 }

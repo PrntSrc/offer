@@ -12,6 +12,21 @@ public class Singleton {
     }
 }
 
+class SingletonDoubleCheck {
+    private volatile static SingletonDoubleCheck Instance;
+    private SingletonDoubleCheck() {}
+    public static SingletonDoubleCheck getInstance() {
+        if (Instance == null) {
+            synchronized (SingletonDoubleCheck.class) {
+                if (Instance == null) {
+                    Instance = new SingletonDoubleCheck();
+                }
+            }
+        }
+        return Instance;
+    }
+}
+
 enum SingletonEnum {
     INSTANCE;
     void fun () {
