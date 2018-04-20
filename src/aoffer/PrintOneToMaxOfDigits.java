@@ -7,16 +7,23 @@ package aoffer;
 public class PrintOneToMaxOfDigits {
 
     public static void print(int digits) {
-        int temp = 1, i, exp = 1;
-        while (digits-- > 0) {
-            exp *= 10;
-            i = temp;
-            while (i < exp) {
-                System.out.println(i);
-                i++;
-            }
-            temp = i;
+        StringBuilder sb = new StringBuilder();
+        for (int i = 1; i <= digits; i++) sb.append('9');
+        for (String i = "0"; !i.equals(sb.toString());) {
+            i = increment(i);
+            System.out.println(i);
         }
+     }
+
+    private static String increment(String s) {
+        StringBuilder sb = new StringBuilder();
+        char[] c = s.toCharArray();
+        int i = c.length - 1;
+        while (i >= 0 && c[i] == '9') i--;
+        if (i < 0) sb.append(1);
+        else c[i] += 1;
+        while (i + 1 < c.length) c[++i] = '0';
+        return sb.append(c).toString();
     }
 
     public static void main(String[] args) {
