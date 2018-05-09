@@ -1,6 +1,7 @@
 package aoffer;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -9,19 +10,27 @@ import java.util.List;
  */
 public class Num38_StringPermutation {
 
-    public static List getPermutations(String s) {
-        return getPermutations(s, "", new ArrayList<>(), 0);
+    public static List<String> getPermutations(String s) {
+        return getPermutations(s.toCharArray(), new ArrayList<>(), 0);
     }
 
-    private static List getPermutations(String s, String t, List<String> permutations, int index) {
-        if (t.length() == s.length()) {
-            permutations.add(t);
-            return permutations;
+    private static List<String> getPermutations(char[] c, List<String> res, int index) {
+        if (index == c.length)
+            res.add(String.valueOf(c));
+        else {
+            for (int i = index; i < c.length; i++) {
+                char t1 = c[i];
+                c[i] = c[index];
+                c[index] = t1;
+
+                getPermutations(c, res, index + 1);
+
+                char t2 = c[i];
+                c[i] = c[index];
+                c[index] = t2;
+            }
         }
-        if (index == s.length()) return permutations;
-        getPermutations(s, t + s.charAt(index), permutations, index + 1);
-        getPermutations(s, t, permutations, index + 1);
-        return permutations;
+        return res;
     }
 
     public static void main(String[] args) {

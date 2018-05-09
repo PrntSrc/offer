@@ -27,6 +27,10 @@ public class Num47_MaxValueOfGift {
         return dp[row][col];
     }
 
+    private static int review(int[][] board) {
+        return 0;
+    }
+
     public static void main(String[] args) {
         int[][] board = new int[][] {
                 {1, 10, 3, 8},
