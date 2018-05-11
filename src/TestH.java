@@ -8,16 +8,36 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class TestH {
 
+    public TestH() {
+        this(10);
+    }
+
+    public TestH(int data) {
+        this.data = data;
+    }
+
+    public void display() {
+//        class Decrementer {
+//            public void decrement(){data--;}};
+//        Decrementer d = new Decrementer();
+//        d.decrement();
+        System.out.println("data=" + data);
+    }
+    private int data;
+
+            class Decrementer {
+            public void decrement(double data){data = data - 1.0;}}
+
     public static void main(String[] args) {
-        ConcurrentHashMap<Integer, Integer> map = new ConcurrentHashMap<>();
-        map.get(1);
-        String s1 = "3";
-        String s2 = "30";
-        System.out.println(s2.compareTo(s1));
-        List<Integer> res = new ArrayList<>();
-        res.add(3);
-        res.add(3);
-        res.remove((Object)3);
-        System.out.println(res.size());
+                Integer a = new Integer("32111");
+    }
+    static char[] getCharArray(byte[] arr) {
+                char[] carr = new char[4];
+                int i = 0;
+                for (byte c : arr) {
+                    carr[i] = (char)c++;
+                    i++;
+                }
+                return carr;
     }
 }
