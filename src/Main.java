@@ -1,24 +1,11 @@
-import sun.nio.ch.ThreadPool;
-
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Hashtable;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
-import java.util.Queue;
 import java.util.Set;
 import java.util.Stack;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.Semaphore;
-import java.util.concurrent.SynchronousQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.logging.SimpleFormatter;
 
 
 /**
@@ -31,6 +18,13 @@ public class Main {
 //    private static ExecutorService executorService = new ThreadPoolExecutor();//Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors() * 2);
 
     private static void fun() {
+        StringBuilder sb = new StringBuilder();
+        sb.toString().replace("", "%20");
+        Stack<Integer> stack = new Stack<>();
+        ArrayList<Integer> res = new ArrayList<>();
+        res.addAll(stack);
+
+        Set<Integer> set = new HashSet<>();
         int i = 0;
         while (i++ < 10000) {
             System.out.println(i);
@@ -51,9 +45,11 @@ public class Main {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        ExecutorService es = Executors.newCachedThreadPool();
-        System.out.println((char)('a' - 32));
-        System.out.println((1 << 1) + 1);
-        System.out.println();
+//        ExecutorService es = Executors.newCachedThreadPool();
+//        System.out.println((char)('a' - 32));
+//        System.out.println((1 << 1) + 1);
+//        System.out.println();
+//        Integer i = new Double(Math.pow(2, 3)).intValue();
+        System.out.println(Math.pow(-1, 1));
     }
 }
