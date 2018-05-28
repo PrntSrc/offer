@@ -45,10 +45,11 @@ public class Main {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        ExecutorService es = Executors.newCachedThreadPool();
-        System.out.println((char)('a' - 32));
-        System.out.println((1 << 1) + 1);
-        System.out.println();
-        Integer i = new Double(Math.pow(2, 3)).intValue();
+//        ExecutorService es = Executors.newCachedThreadPool();
+//        System.out.println((char)('a' - 32));
+//        System.out.println((1 << 1) + 1);
+//        System.out.println();
+//        Integer i = new Double(Math.pow(2, 3)).intValue();
+        System.out.println(Math.pow(-1, 1));
     }
 }

@@ -16,12 +16,9 @@ public class CompleteBackpack {
         dp[0] = 1;
 
         for (int i = 1; i <= coins.length; i++) {
-            for (int j = coins[i - 1]; j <= n; j++) {
+            for (int j = coins[i - 1]; j <= n; j++)
                 dp[j] += dp[j - coins[i - 1]];
-            }
         }
-//        for (int[] a : dp)
-//            System.out.println(Arrays.toString(a));
         return dp[n];
     }
 

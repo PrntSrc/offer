@@ -37,6 +37,35 @@ public class Backpack {
     }
 
     /**
+     * n : 物品数
+     * capacity : 最大承重
+     * weights : 物品各自重量
+     * values : 物品各自价值
+     */
+    public static long completeBackpack(int n, int[] weights, int[] values, int capacity) {
+        int[] dp = new int[capacity + 1];
+        for (int i = 1; i <= n; i++) {
+            for (int j = weights[i]; j <= capacity; j++)
+                dp[j] = Math.max(dp[j], dp[j - weights[i - 1]] + values[i - 1]);
+        }
+        return dp[n];
+    }
+
+    /**
+     * 计算到达N值的方法数
+     */
+    public static long countWayToN(int n) {
+        int[] coins = new int[] {1, 5, 10, 20, 50, 100};
+        long[] dp = new long[n + 1];
+        dp[0] = 1;
+        for (int i = 1; i <= coins.length; i++) {
+            for (int j = coins[i - 1]; j <= n; j++)
+                dp[j] += dp[j - coins[i - 1]];
+        }
+        return dp[n];
+    }
+
+    /**
      * print the solving path index of 0-1 backpack problem in order
      * index start from 1
      * @param n the number of goods
