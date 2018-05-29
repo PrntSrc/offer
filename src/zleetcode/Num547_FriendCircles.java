@@ -1,9 +1,6 @@
 package zleetcode;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.Arrays;
 
 /**
  * @author Yue Lin
@@ -11,29 +8,32 @@ import java.util.Set;
  */
 public class Num547_FriendCircles {
 
-    private static int count;
-
     public static int findCircleNum(int[][] M) {
+        int count = 0;
         boolean[] marked = new boolean[M.length];
-        dfs(M, marked, 0);
+        for (int i = 0; i < M.length; i++) {
+            if (!marked[i]) {
+                dfs(M, marked, i);
+                count++;
+            }
+        }
         return count;
     }
 
     private static void dfs(int[][] M, boolean[] marked, int v) {
-        marked[v] = true;
-        for (int w = v; w < M[0].length; w++) {
-            if (marked[w]) count++;
-            else if (M[v][w] == 1)
-                dfs(M, marked, w);
+        for (int j = 0; j < M.length; j++) {
+            if (!marked[j] && M[v][j] == 1) {
+                marked[j] = true;
+                dfs(M, marked, j);
+            }
         }
     }
 
     public static void main(String[] args) {
         int[][] M = new int[][] {
                 {1, 1, 0},
-                {1, 1, 1},
-                {0, 1, 1}};
-
+                {1, 1, 0},
+                {0, 0, 1}};
         System.out.println(findCircleNum(M));
     }
 }
