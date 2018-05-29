@@ -1,0 +1,6 @@
+3.无重复字符的最长子串
+    abcabcabc
+    abba
+    设一head指针，表示当前未重复子串的开头，要考虑重复字符a2之前已出现的a1的下标与head的关系：
+    < head ： 没关系
+    >= head ：head = map.get(a) + 1;
