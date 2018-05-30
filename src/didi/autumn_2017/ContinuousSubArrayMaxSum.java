@@ -6,7 +6,7 @@ import java.util.Scanner;
  * @author Yue Lin
  * @since 2018-05-29
  */
-public class ContinuousSubarrayMaxSum {
+public class ContinuousSubArrayMaxSum {
 
     public static int getContinuousSubArrayMaxSum(int n, int[] nums) {
         int cur = nums[0], max = nums[0];
