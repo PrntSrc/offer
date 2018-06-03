@@ -40,6 +40,6 @@ public class Num198_HouseRobber {
 
     public static void main(String[] args) {
         int[] nums = new int[] {3, 9, 5, 7, 4, 2, 8, 6};
-        System.out.println(rob(nums));
+        System.out.println(rob  (nums));
     }
 }

@@ -52,6 +52,7 @@ public class Main {
 //        System.out.println((1 << 1) + 1);
 //        System.out.println();
 //        Integer i = new Double(Math.pow(2, 3)).intValue();
-        System.out.println(Math.pow(-1, 1));
+        System.out.println(Math.pow(2, 32) / 8 );
+//        System.out.println(Math.pow(-1, 1));
     }
 }
