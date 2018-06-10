@@ -52,7 +52,9 @@ public class Main {
 //        System.out.println((1 << 1) + 1);
 //        System.out.println();
 //        Integer i = new Double(Math.pow(2, 3)).intValue();
-        System.out.println(Math.pow(2, 32) / 8 );
+//        System.out.println(Math.pow(2, 32) / 8 );
 //        System.out.println(Math.pow(-1, 1));
+        char c1 = 'a' - 'a', c2 = 'b' - 'a';
+        System.out.println((c1 << 1) & c2);
     }
 }

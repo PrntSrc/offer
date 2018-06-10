@@ -11,30 +11,46 @@ import java.util.List;
  */
 public class Num210_CourseScheduleII {
 
-    private static List<Integer>[] graph;
-
     public static int[] findOrder(int numCourses, int[][] prerequisites) {
+        List[] graph = new List[numCourses];
+        for (int i = 0; i < numCourses; i++)
+            graph[i] = new ArrayList();
+        for (int[] p : prerequisites)
+            graph[p[1]].add(p[0]);
+        boolean[] marked = new boolean[numCourses];
         int[] order = new int[numCourses];
-        List<Integer> res = new LinkedList<>();
-        generateGraph(numCourses, prerequisites);
-        for (int[] prerequisite : prerequisites)
-            graph[prerequisite[0]].add(prerequisite[1]);
+        Arrays.fill(order, -1);
+        return dfs(graph, 0, marked, order, new ArrayList<>()) ? order : null;
+    }
 
-        for (int i = 0; i < numCourses; i++) {
-            if (graph[i].isEmpty()) res.add(i);
-            else i = graph[i].get(0);
+    private static boolean dfs(List[] graph, int index, boolean[] marked, int[] order, ArrayList<Integer> temp) {
+        if (marked[index]) return false;
+        if (graph[index].size() == 0 && temp.size() > 0) {
+            range(order, temp);
+            return true;
         }
-
-        return order;
+        marked[index] = true;
+        for (int i = 0; i < graph[index].size(); i++) {
+            int t = (Integer) graph[index].get(i);
+            if (!marked[t]) {
+                temp.add(t);
+                if (!dfs(graph, t, marked, order, temp))
+                    return false;
+                temp.remove(temp.size() - 1);
+            }
+        }
+        marked[index] = false;
+        return true;
     }
 
-    private static void dfs(List<Integer> graph, boolean[] visited, int course, List<Integer> order) {
-        if (visited[course]);
-    }
+    private static void range(int[] order, ArrayList<Integer> list) {
+        if (list.size() == 1) {
+            int i = 0;
+            while (order[i] != -1) i++;
+            order[i] = list.get(0);
+        } else {
 
-    private static void generateGraph(int numCourse, int[][] prerequisites) {
-        graph = new List[numCourse];
-        for (int i = 0; i < numCourse; i++) graph[i] = new ArrayList<>();
+        }
     }
 
     public static void main(String[] args) {
